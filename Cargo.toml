@@ -1,0 +1,12 @@
+[package]
+# https://doc.rust-lang.org/cargo/reference/manifest.html
+name = "tackler-rs"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+description = "Rust implementation of Tackler"
+homepage = "https://tackler.e257.fi/"
+repository = "https://gitlab.com/e257/accounting/tackler-rs"
+readme = "README.md"
+
+[dependencies]

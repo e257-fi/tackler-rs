@@ -10,3 +10,5 @@ repository = "https://gitlab.com/e257/accounting/tackler-rs"
 readme = "README.md"
 
 [dependencies]
+antlr-rust = "0.3.0-beta"
+log = "*"

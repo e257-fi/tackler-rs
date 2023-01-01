@@ -1,0 +1,12 @@
+= Tackler Grammar 
+
+This directory contains grammar (and lexer) definition for Tackler, and generated parser files. Parser definition is done with link:https://www.antlr.org/[ANTLR].
+
+== How re-generate Tackler Txn Parser
+
+1. Get link:https://github.com/rrevenantt/antlr4rust/releases[ANTLR with Rust target], e.g. download jar file from that page
+1. Generate parser
+
+----  
+java -jar /path/to/antlr4-4.8-2-SNAPSHOT-complete.jar -Dlanguage=Rust TxnLexer.g4 TxnParser.g4
+----

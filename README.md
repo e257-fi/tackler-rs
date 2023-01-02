@@ -8,8 +8,6 @@ See [Parser definition](./src/txn_antlr/readme.adoc) for grammar and lexer.
 
 The rust target for ANTLR is here: https://github.com/rrevenantt/antlr4rust
 
-At the moment, parser result won't detect errorneous input
-
 
 ## Test cases
 
@@ -24,4 +22,14 @@ Journal with unicode high-bit UTF-8 characters
 Full format
 
     cargo run tests/format.txn
+
+## Error cases (e.g. invalid input)
+
+Simple invalid input with malformed date
+
+    cargo run tests/err-0001.txn
+
+Invalid input with duplicate metadata elements
+
+    cargo run tests/err-0002.txn
 

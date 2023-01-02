@@ -15,6 +15,23 @@
  *
  */
 
+use antlr_rust::BailErrorStrategy;
+use antlr_rust::TidAble;
+use antlr_rust::token_stream::TokenStream;
+
+use txnlexer::LocalTokenFactory;
+use txnparser::TxnParser;
+use txnparser::TxnParserContextType;
+
 pub mod txnlexer;
 pub mod txnparser;
 pub mod txnparserlistener;
+
+impl<'input, I> TxnParser<'input, I, BailErrorStrategy<'input, TxnParserContextType>>
+    where
+        I: TokenStream<'input, TF=LocalTokenFactory<'input>> + TidAble<'input>,
+{
+    pub fn new(input: I) -> Self {
+        Self::with_strategy(input, BailErrorStrategy::new())
+    }
+}

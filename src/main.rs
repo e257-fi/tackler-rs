@@ -16,26 +16,20 @@
  */
 use std::env;
 use std::error::Error;
-use std::path::Path;
-
-
 use std::fs::File;
 use std::io::Read;
+use std::path::Path;
+
+use antlr_rust::{BailErrorStrategy, InputStream};
+use antlr_rust::common_token_stream::CommonTokenStream;
+use antlr_rust::token_factory::CommonTokenFactory;
+use antlr_rust::tree::ParseTree;
 use log::error;
 
-  use antlr_rust::tree::{
-        ParseTree,
-    };
-
-use antlr_rust::common_token_stream::CommonTokenStream;
-use antlr_rust::token_factory::{CommonTokenFactory};
-use antlr_rust::InputStream;
+use txn_antlr::txnlexer::TxnLexer;
+use txn_antlr::txnparser::TxnParser;
 
 pub mod txn_antlr;
-
-use txn_antlr::txnparser::TxnParser;
-use txn_antlr::txnlexer::TxnLexer;
-
 
 fn txns_file(path: &Path) -> Result<String, Box<dyn Error>> {
     let f = File::open(path);
@@ -57,17 +51,16 @@ fn txns_file(path: &Path) -> Result<String, Box<dyn Error>> {
     let mut _lexer = TxnLexer::new_with_token_factory(InputStream::new(txns_str.as_str()), &tf);
 
     let token_source = CommonTokenStream::new(_lexer);
-    let mut parser = TxnParser::new(token_source);
+    let mut parser = TxnParser::<'_, _, BailErrorStrategy<'_, _>>::new(token_source);
 
     let result = parser.txns();
-
     match result {
         Ok(_) => {
             let res_str = result.unwrap().to_string_tree(&*parser);
             Ok(res_str)
         },
         Err(err) => {
-            let msg = format!("ANTRL error: TODO Errors are not propagating {}", err);
+            let msg = format!("ANTRL error: {}", err);
             Err(msg.into())
         }
     }

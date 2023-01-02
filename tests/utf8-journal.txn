@@ -1,0 +1,13 @@
+2021-01-01 'account names with high bit utf-8
+  Expenses:ice_cream   1
+  Expenses:jäätelö:mansikka-vadelma   2
+  Expenses:crème·glacée   3
+  Expenses:мороженое   4
+  Expenses:アイスクリーム   5
+  Expenses:風:空  6
+  Credit_Card:1234567890
+
+2017-05-01 'Value pos. with unit price (SEK -> €)
+ Expences:Ice·Cream  200 SEK @ 0.1039 €
+ Assets:Cash  -20.78 €
+

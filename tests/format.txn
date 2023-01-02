@@ -1,3 +1,11 @@
+2017-01-01
+ Assets:Checking 500.00
+ Equity:Assets
+
+2017-01-05 'Shopping on farmer's market
+ Expenses:Groceries 50.00
+ Assets:Checking
+
 2021-01-01
   e 1
   a -1
@@ -6,22 +14,33 @@
   e 1
   a
 
-2021-01-01 (#123)
+2021-01-01T22:12:34
   e 1
-  a 
-
-2021-01-01 'Hello tackler-rs!
-  e 1
-  a 
-
-2021-01-01 (#123) 'Hello tackler-rs!
-  e 1
-  a 
+  a
 
 2021-01-01T22:12:34.123456789
   e 1
-  a -1
+  a
 
+2021-01-01T22:12:34Z
+  e 1
+  a
+
+2021-01-01T22:12:34+02:00
+  e 1
+  a
+
+2021-01-01T22:12:34.123456789Z
+  e 1
+  a
+
+2021-01-01T22:12:34.123456789+02:00
+  e 1
+  a
+
+2017-01-01 (#123)
+ Expences:Jäätelö   2
+ Assets:Cash
 
 2019-03-16 (#125) 'It was 125th Ice Cream!
  Expenses:IceCream 2
@@ -30,7 +49,6 @@
 2019-03-16 'Ice cream 'n soda!
  Expenses:BostonCooler 3
  Assets:Cash
-
 
 2021-01-01 'unicode account names
   Expenses:ice_cream   1
@@ -81,11 +99,17 @@
  Expenses:Ice_cream 2.12
  Assets:Cash
 
+2022-01-02 'txn with all metadata and ice crean with some precision!
+  # uuid: e23726a2-4907-429d-ac55-8bbf2b593573
+  # location: geo:60.167,24.955,5
+  # tags: a, b, c
+  Expenses:Ice_cream 1234567890.123456789
+  Assets:Cash
+
 2017-01-01 'Txn with comment
  ; txn level comment
  Expenses:groceries 12.00 ; posting comment
  assets:checking
-
 
 2017-01-01 'Txn with multiline comment
  ; it was warm

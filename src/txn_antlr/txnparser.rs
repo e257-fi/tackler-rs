@@ -6,6 +6,8 @@
 #![allow(unused_imports)]
 #![allow(unused_mut)]
 #![allow(unused_braces)]
+#![allow(unused_parens)]
+#![allow(unused_variables)]
 use antlr_rust::PredictionContextCache;
 use antlr_rust::parser::{Parser, BaseParser, ParserRecog, ParserNodeType};
 use antlr_rust::token_stream::TokenStream;
@@ -1462,7 +1464,9 @@ where
 							recog.base.match_token(NL,&mut recog.err_handler)?;
 
 
-							/* $u++; */
+							 let tmp = *_localctx.get_u(); let tmp = { (tmp+1)}.to_owned();
+							 cast_mut::<_,Txn_metaContext >(&mut _localctx).set_u(tmp);
+							  
 							}
 						}
 					,
@@ -1480,7 +1484,9 @@ where
 							recog.base.match_token(NL,&mut recog.err_handler)?;
 
 
-							/* $l++; */
+							 let tmp = *_localctx.get_l(); let tmp = { (tmp+1)}.to_owned();
+							 cast_mut::<_,Txn_metaContext >(&mut _localctx).set_l(tmp);
+							  
 							}
 						}
 					,
@@ -1498,7 +1504,9 @@ where
 							recog.base.match_token(NL,&mut recog.err_handler)?;
 
 
-							/* $t++; */
+							 let tmp = *_localctx.get_t(); let tmp = { (tmp+1)}.to_owned();
+							 cast_mut::<_,Txn_metaContext >(&mut _localctx).set_t(tmp);
+							  
 							}
 						}
 

@@ -40,9 +40,9 @@ description: sp '\'' text;
 text: ~(NL)*;
 
 txn_meta [i32 u, i32 l, i32 t]:  (
-        {$u < 1}? txn_meta_uuid NL      {/* $u++; */}
-     |  {$l < 1}? txn_meta_location NL  {/* $l++; */}
-     |  {$t < 1}? txn_meta_tags NL      {/* $t++; */}
+        {$u < 1}? txn_meta_uuid NL      { let tmp = $u; $u = (tmp+1); }
+     |  {$l < 1}? txn_meta_location NL  { let tmp = $l; $l = (tmp+1); }
+     |  {$t < 1}? txn_meta_tags NL      { let tmp = $t; $t = (tmp+1); }
      )+;
 
 txn_meta_uuid:     indent '#' sp UUID_NAME ':' sp UUID_VALUE opt_sp;

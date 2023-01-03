@@ -1,10 +1,10 @@
 = Tackler-rs
 
-This will be rusty [Tackler](https://gitlab.com/e257/accounting/tackler)
+This will be rusty link:https://gitlab.com/e257/accounting/tackler[Tackler]
 
 == POC of Tackler grammar with ANTLR parser generator for rust target
 
-See [Parser definition](./src/txn_antlr/readme.adoc) for grammar and lexer.
+See link:./tackler-core/src/parser/txn_antlr/readme.adoc[Parser definition] for grammar and lexer.
 
 The rust target for ANTLR is here: https://github.com/rrevenantt/antlr4rust
 

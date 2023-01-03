@@ -1,6 +1,6 @@
 = Tackler Txn Parser Grammar and Lexer definitions
 
-This directory contains link:./TxnParser.g4[grammar] and link:./TxnLexer.g4[lexer] definitions for Tackler. Parser definition is generated with link:https://www.antlr.org/[ANTLR]. The Rust target for ANTLR is located on link:https://github.com/rrevenantt/antlr4rust repository.
+This directory contains link:./TxnParser.g4[grammar] and link:./TxnLexer.g4[lexer] definitions for Tackler. Parser definition is generated with link:https://www.antlr.org/[ANTLR]. The Rust target for ANTLR is located on here: https://github.com/rrevenantt/antlr4rust.
 
 Directory also contains generated transient parser implementation files. Those are overwriten when the parser is regenerated.
 

@@ -1,6 +1,6 @@
 # Tackler-rs
 
-This will be rusty [Tackler](https://gitlab.com/e257/accounting/tackler)
+This will be rusty [Tackler](https://github.com/e257-fi/tackler-rs)
 
 ## POC of Tackler grammar with ANTLR parser generator for rust target
 

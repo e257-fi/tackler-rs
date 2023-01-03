@@ -4,7 +4,7 @@ This will be rusty [Tackler](https://gitlab.com/e257/accounting/tackler)
 
 ## POC of Tackler grammar with ANTLR parser generator for rust target
 
-See [Parser definition](./src/txn_antlr/readme.adoc) for grammar and lexer.
+See [Parser definition](../tackler-core/src/parser/txn_antlr/readme.adoc) for grammar and lexer.
 
 The rust target for ANTLR is here: https://github.com/rrevenantt/antlr4rust
 

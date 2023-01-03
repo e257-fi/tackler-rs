@@ -14,7 +14,8 @@
  * limitations under the License.
  *
  */
-use std::env;
+
+//! Tackler core components
 use std::error::Error;
 use std::fs::File;
 use std::io::Read;
@@ -24,14 +25,13 @@ use antlr_rust::{BailErrorStrategy, InputStream};
 use antlr_rust::common_token_stream::CommonTokenStream;
 use antlr_rust::token_factory::CommonTokenFactory;
 use antlr_rust::tree::ParseTree;
-use log::error;
 
-use txn_antlr::txnlexer::TxnLexer;
-use txn_antlr::txnparser::TxnParser;
+use crate::parser::txn_antlr::txnlexer::TxnLexer;
+use crate::parser::txn_antlr::txnparser::TxnParser;
 
-pub mod txn_antlr;
+mod parser;
 
-fn txns_file(path: &Path) -> Result<String, Box<dyn Error>> {
+pub fn txns_file(path: &Path) -> Result<String, Box<dyn Error>> {
     let f = File::open(path);
 
     let mut txn_file = match f {
@@ -66,28 +66,3 @@ fn txns_file(path: &Path) -> Result<String, Box<dyn Error>> {
     }
 }
 
-fn main() {
-    let args: Vec<String> = env::args().collect();
-
-    if args.len() != 2 {
-        eprintln!("Error: Missing input file");
-        eprintln!("Usage: {} <tackler txns-file>", &args[0]);
-        std::process::exit(1);
-    }
-    let txn_file = Path::new(&args[1]);
-
-    print!("Parsing {} ...", txn_file.display());
-    match txns_file(txn_file) {
-        Ok(parse_tree) => {
-            println!("ok!");
-            println!("Parse tree is:\n{}\n", parse_tree);
-            std::process::exit(0);
-        }
-        Err(err) => {
-            let msg = format!("Error: {}", err);
-            error!("{}", msg);
-            eprintln!("{}", msg);
-            std::process::exit(1);
-        }
-    }
-}

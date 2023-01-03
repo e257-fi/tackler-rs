@@ -13,9 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-[workspace]
-members = [
-  "tackler-api",
-  "tackler-core",
-  "tackler-cli",
-]
+[package]
+name = "tackler-rs"
+version = "0.1.1"
+edition = "2021"
+license = "Apache-2.0"
+description = "Rust implementation of Tackler"
+homepage = "https://tackler.e257.fi/"
+repository = "https://gitlab.com/e257/accounting/tackler-rs"
+readme = "README.md"
+
+[dependencies]
+tackler-api =  { path = "../tackler-api",  version = "0.1.0" }
+tackler-core = { path = "../tackler-core", version = "0.1.0" }
+log = "*"

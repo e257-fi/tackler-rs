@@ -14,7 +14,6 @@
  * limitations under the License.
  *
  */
-
 use antlr_rust::BailErrorStrategy;
 use antlr_rust::TidAble;
 use antlr_rust::token_stream::TokenStream;
@@ -35,3 +34,4 @@ impl<'input, I> TxnParser<'input, I, BailErrorStrategy<'input, TxnParserContextT
         Self::with_strategy(input, BailErrorStrategy::new())
     }
 }
+

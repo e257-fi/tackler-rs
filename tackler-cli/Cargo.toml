@@ -14,11 +14,11 @@
 # limitations under the License.
 #
 [package]
-name = "tackler-rs"
-version = "0.1.2"
+name = "tackler"
+version = "0.1.0"
 edition = "2021"
 license = "Apache-2.0"
-description = "Rust implementation of Tackler"
+description = "Rusty implementation of Tackler"
 homepage = "https://tackler.e257.fi/"
 repository = "https://github.com/e257-fi/tackler-rs"
 readme = "README.md"
@@ -27,3 +27,4 @@ readme = "README.md"
 tackler-api =  { path = "../tackler-api",  version = "0.1.0" }
 tackler-core = { path = "../tackler-core", version = "0.1.0" }
 log = "0.4"
+

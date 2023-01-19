@@ -1,8 +1,8 @@
-# Tackler-rs
+# Tackler
 
-This will be rusty [Tackler](https://github.com/e257-fi/tackler-rs)
+This will be rusty [Tackler](https://tackler.e257.fi/)
 
-## POC of Tackler grammar with ANTLR parser generator for rust target
+## POC of Tackler's grammar with ANTLR parser generator for rust target
 
 See [Parser definition](../tackler-core/src/parser/txn_antlr/readme.adoc) for grammar and lexer.
 

@@ -37,7 +37,7 @@ pub fn txns_file(path: &Path) -> Result<String, Box<dyn Error>> {
     let mut txn_file = match f {
         Ok(file) =>  file,
         Err(err) => {
-            let msg = format!("Can not open file: [{}], with error \"{}\"", path.display(), err.to_string());
+            let msg = format!("Can not open file: [{}], with error \"{}\"", path.display(), err);
             return Err(msg.into())
         }
     };

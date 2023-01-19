@@ -1,6 +1,6 @@
 = Tackler-rs
 
-This will be rusty link:https://gitlab.com/e257/accounting/tackler[Tackler]
+This will be rusty link:https://tackler.e257.fi/[Tackler]
 
 == POC of Tackler grammar with ANTLR parser generator for rust target
 
@@ -13,23 +13,23 @@ The rust target for ANTLR is here: https://github.com/rrevenantt/antlr4rust
 
 Simple test-case
 
-    cargo run tests/0001-test.txn
+    cargo run -p tackler tests/0001-test.txn
 
 Journal with unicode high-bit UTF-8 characters
 
-    cargo run tests/utf8-journal.txn
+    cargo run -p tackler tests/utf8-journal.txn
 
 Full format
 
-    cargo run tests/format.txn
+    cargo run -p tackler tests/format.txn
 
 ## Error cases (e.g. invalid input)
 
 Simple invalid input with malformed date
 
-    cargo run tests/err-0001.txn
+    cargo run -p tackler tests/err-0001.txn
 
 Invalid input with duplicate metadata elements
 
-    cargo run tests/err-0002.txn
+    cargo run -p tackler tests/err-0002.txn
 
